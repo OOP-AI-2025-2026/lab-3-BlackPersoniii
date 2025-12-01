@@ -1,23 +1,7 @@
-package org.example.task2;
+package org.example.Task2;
 
-public class Item {
-
-    public long id;
-    public String name;
-    public double price;
-
-    public Item(long _id, String _name, double _price) {
-        this.id = _id;
-        this.name = _name;
-        this.price = _price;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", price=" + price +
-                ", name='" + name + '\'' +
-                '}' + "\n";
-    }
+public record Item(long id, String name, double price) {
+    // Всі поля final, конструктор та гетери генеруються автоматично
+    // toString(), equals() та hashCode() також генеруються.
+    // Тут не потрібно писати нічого, якщо не треба додавати власну логіку.
 }
